@@ -27,4 +27,9 @@ public class CountryController {
 	public ResponseEntity<?> getCountryByContinent(@PathVariable("continent") String continent) {
 		return new ResponseEntity<>(countryService.getByContinent(continent), HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/popul/{code}",method = RequestMethod.GET)
+	public ResponseEntity<?> getCountryPopulation(@PathVariable("code") String code) {
+		return new ResponseEntity<>(countryService.getPopulationByCode(code), HttpStatus.OK);
+	}
 }

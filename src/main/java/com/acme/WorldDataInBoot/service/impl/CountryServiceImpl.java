@@ -24,12 +24,20 @@ public class CountryServiceImpl implements CountryService {
 		Optional<Country> c  = countryDao.findById(code.toUpperCase());
 		return (c.isPresent() ? c.get() : null);
 	}
-
+	
 	@Override
 	public List<Country> getByContinent(String continent) {
 
 		// TODO :  add pagination support
 		return countryDao.getByContinentIgnoreCase(continent);
+	}
+
+	@Override
+	public Integer getPopulationByCode(String code) {
+		Country country = getByCode(code);
+		if(country == null) 
+			LOGGER.warning("No country found with code  : "+code);
+		return (country == null ? null : country.getPopulation());
 	}
 
 }
