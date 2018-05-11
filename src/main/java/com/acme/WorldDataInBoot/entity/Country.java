@@ -16,7 +16,10 @@ public class Country {
 	@Column(columnDefinition = "text", nullable = false)
 	private String name;
 
-	@Column(columnDefinition = "text", nullable = false) // TODO :  need to add constrain to add only selected continents
+	@Column(columnDefinition = "text", nullable = false) // TODO : need to add
+															// constrain to add
+															// only selected
+															// continents
 	private String continent;
 
 	@Column(columnDefinition = "text", nullable = false)
@@ -44,6 +47,8 @@ public class Country {
 	private String headOfState;
 
 	private Integer capital;
+
+	private Integer population;
 
 	@Column(columnDefinition = "character(2)", nullable = false)
 	private String code2;
@@ -150,6 +155,14 @@ public class Country {
 
 	public void setCode2(String code2) {
 		this.code2 = code2;
+	}
+
+	public Integer getPopulation() {
+		return population;
+	}
+
+	public void setPopulation(Integer population) {
+		this.population = population;
 	}
 
 }

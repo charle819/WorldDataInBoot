@@ -9,4 +9,6 @@ public interface CountryService {
 	Country getByCode(String code);
 
 	List<Country> getByContinent(String continent);
+	
+	Integer getPopulationByCode(String code);
 }
