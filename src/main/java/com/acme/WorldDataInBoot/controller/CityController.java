@@ -20,7 +20,7 @@ public class CityController {
 	
 	@RequestMapping(value = "/status", method = RequestMethod.GET)
 	public ResponseEntity<?> getStatus(){
-		return new ResponseEntity<>("Api is up and running", HttpStatus.OK);
+		return new ResponseEntity<>("Api is up and running, testing heroku CD", HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/{code}",method = RequestMethod.GET)
